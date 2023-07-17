@@ -50,8 +50,8 @@
           "secure": false
         },
         "active": true,
-        "createdAt": "2023-02-24T09:03:58.845Z",
-        "updatedAt": "2023-03-06T12:04:04.136Z"
+        "createdAt": "2023-07-17T05:09:36.818Z",
+        "updatedAt": "2023-07-17T06:01:41.278Z"
       },
       {
         "id": 2,
@@ -61,8 +61,8 @@
           "sendmail": true
         },
         "active": false,
-        "createdAt": "2023-02-24T09:03:58.846Z",
-        "updatedAt": "2023-03-06T12:04:04.140Z"
+        "createdAt": "2023-07-17T05:09:36.819Z",
+        "updatedAt": "2023-07-17T06:01:41.281Z"
       },
       {
         "id": 3,
@@ -91,16 +91,16 @@
           }
         },
         "active": false,
-        "createdAt": "2023-02-24T09:03:58.848Z",
-        "updatedAt": "2023-03-06T12:04:04.142Z"
+        "createdAt": "2023-07-17T05:09:36.820Z",
+        "updatedAt": "2023-07-17T06:01:41.367Z"
       }
     ],
     "konga_kong_nodes": [
       {
-        "id": 2,
-        "name": "client",
+        "id": 1,
+        "name": "Client API",
         "type": "default",
-        "kong_admin_url": "http://192.168.0.2:8101",
+        "kong_admin_url": "http://172.18.232.4:8101",
         "kong_api_key": "",
         "jwt_algorithm": "HS256",
         "username": "",
@@ -108,43 +108,20 @@
         "kong_version": "3.0.2",
         "health_checks": false,
         "active": false,
-        "createdAt": "2023-02-24T09:07:18.791Z",
-        "updatedAt": "2023-02-27T13:54:14.808Z"
+        "createdAt": "2023-07-17T05:12:13.710Z",
+        "updatedAt": "2023-07-17T05:12:16.764Z"
       }
     ],
-    "konga_kong_services": [
-      {
-        "id": 1,
-        "service_id": "190fe225-e6e7-4c3a-9a83-23ccba137180",
-        "kong_node_id": "2",
-        "description": "test",
-        "createdAt": "2023-02-24T09:08:54.911Z",
-        "updatedAt": "2023-02-27T13:54:31.598Z"
-      },
-      {
-        "id": 2,
-        "service_id": "b89b4e3b-282a-461c-9a8a-e982704d3463",
-        "kong_node_id": "2",
-        "createdAt": "2023-02-24T09:15:30.641Z",
-        "updatedAt": "2023-02-27T04:02:00.660Z"
-      },
-      {
-        "id": 3,
-        "service_id": "9876abe1-cd08-4593-ac5f-f4371ea0040f",
-        "kong_node_id": "2",
-        "createdAt": "2023-02-27T03:51:43.044Z",
-        "updatedAt": "2023-02-27T04:18:25.546Z"
-      }
-    ],
+    "konga_kong_services": [],
     "konga_netdata_connections": [],
     "konga_passports": [
       {
         "id": 1,
         "protocol": "local",
-        "password": "$2a$10$3VX0Lra58abbsjd6A5l1hulOMkhs4LQ/UZ..6ipG0VYMATbBL1lVC",
+        "password": "$2a$10$AtCwh0ZSvYUdz.yKGSnla.oWibRTzCAiA0Q9tEhCTPnjMbeBAl5na",
         "user": 1,
-        "createdAt": "2023-02-24T09:05:21.103Z",
-        "updatedAt": "2023-02-24T09:05:21.103Z"
+        "createdAt": "2023-07-17T05:11:00.576Z",
+        "updatedAt": "2023-07-17T05:11:00.576Z"
       }
     ],
     "konga_settings": [
@@ -247,25 +224,2467 @@
             }
           }
         },
-        "createdAt": "2023-02-24T09:03:58.860Z",
-        "updatedAt": "2023-03-06T12:04:04.149Z"
+        "createdAt": "2023-07-17T05:09:36.825Z",
+        "updatedAt": "2023-07-17T06:01:41.377Z"
       }
     ],
-    "konga_kong_snapshots": [],
+    "konga_kong_snapshots": [
+      {
+        "id": 1,
+        "name": "1689570751271_16/07-snapshot",
+        "kong_node_name": "eWallet UAT Kong -  KongHTP@2023",
+        "kong_node_url": "http://172.18.232.4:8101",
+        "kong_version": "3.0.2",
+        "data": {
+          "services": [
+            {
+              "name": "Client_API_V1",
+              "connect_timeout": 60000,
+              "read_timeout": 60000,
+              "write_timeout": 60000,
+              "tags": [],
+              "updated_at": 1682669084,
+              "id": "c6041b6b-05fa-4d45-ade7-84517e0a8a25",
+              "tls_verify": null,
+              "path": "/api",
+              "tls_verify_depth": null,
+              "client_certificate": null,
+              "protocol": "http",
+              "enabled": true,
+              "ca_certificates": null,
+              "host": "Client_API",
+              "created_at": 1682667787,
+              "port": 80,
+              "retries": 5,
+              "extras": {
+                "id": 5,
+                "service_id": "c6041b6b-05fa-4d45-ade7-84517e0a8a25",
+                "kong_node_id": "2",
+                "createdAt": "2023-04-28T07:43:07.188Z",
+                "updatedAt": "2023-04-28T08:04:44.189Z"
+              }
+            }
+          ],
+          "routes": [
+            {
+              "strip_path": false,
+              "paths": [
+                "/v1/transaction/code/\\S+"
+              ],
+              "methods": [
+                "GET",
+                "OPTIONS"
+              ],
+              "sources": null,
+              "destinations": null,
+              "snis": null,
+              "hosts": null,
+              "path_handling": "v0",
+              "updated_at": 1685356012,
+              "id": "04200d70-9368-4758-9fd3-03821f43966f",
+              "service": {
+                "id": "c6041b6b-05fa-4d45-ade7-84517e0a8a25"
+              },
+              "https_redirect_status_code": 426,
+              "preserve_host": false,
+              "tags": null,
+              "created_at": 1682668842,
+              "protocols": [
+                "http",
+                "https"
+              ],
+              "name": "_v1_transaction_code_code",
+              "headers": null,
+              "regex_priority": 1,
+              "request_buffering": true,
+              "response_buffering": true
+            },
+            {
+              "strip_path": false,
+              "paths": [
+                "/v1/payment-link/napas"
+              ],
+              "methods": [
+                "POST",
+                "OPTIONS"
+              ],
+              "sources": null,
+              "destinations": null,
+              "snis": null,
+              "hosts": null,
+              "path_handling": "v0",
+              "updated_at": 1682668842,
+              "id": "067746ae-9e1e-44de-8390-7b1d485e89c3",
+              "service": {
+                "id": "c6041b6b-05fa-4d45-ade7-84517e0a8a25"
+              },
+              "https_redirect_status_code": 426,
+              "preserve_host": false,
+              "tags": null,
+              "created_at": 1682668842,
+              "protocols": [
+                "http",
+                "https"
+              ],
+              "name": "_v1_payment-link_napas",
+              "headers": null,
+              "regex_priority": 1,
+              "request_buffering": true,
+              "response_buffering": true
+            },
+            {
+              "strip_path": false,
+              "paths": [
+                "/v1/ekyc/read-id-info"
+              ],
+              "methods": [
+                "POST",
+                "OPTIONS"
+              ],
+              "sources": null,
+              "destinations": null,
+              "snis": null,
+              "hosts": null,
+              "path_handling": "v0",
+              "updated_at": 1682668842,
+              "id": "0b402547-1e80-4617-a72c-1a2c3325476f",
+              "service": {
+                "id": "c6041b6b-05fa-4d45-ade7-84517e0a8a25"
+              },
+              "https_redirect_status_code": 426,
+              "preserve_host": false,
+              "tags": null,
+              "created_at": 1682668842,
+              "protocols": [
+                "http",
+                "https"
+              ],
+              "name": "_v1_ekyc_read-id-info",
+              "headers": null,
+              "regex_priority": 1,
+              "request_buffering": true,
+              "response_buffering": true
+            },
+            {
+              "strip_path": false,
+              "paths": [
+                "/v1/auth/validate-password"
+              ],
+              "methods": [
+                "POST",
+                "OPTIONS"
+              ],
+              "sources": null,
+              "destinations": null,
+              "snis": null,
+              "hosts": null,
+              "path_handling": "v0",
+              "updated_at": 1682668842,
+              "id": "0f1ed779-7db7-444b-a250-100c9f7f66bf",
+              "service": {
+                "id": "c6041b6b-05fa-4d45-ade7-84517e0a8a25"
+              },
+              "https_redirect_status_code": 426,
+              "preserve_host": false,
+              "tags": null,
+              "created_at": 1682668842,
+              "protocols": [
+                "http",
+                "https"
+              ],
+              "name": "_v1_auth_validate-password",
+              "headers": null,
+              "regex_priority": 1,
+              "request_buffering": true,
+              "response_buffering": true
+            },
+            {
+              "strip_path": false,
+              "paths": [
+                "/v1/notification/register"
+              ],
+              "methods": [
+                "POST",
+                "OPTIONS"
+              ],
+              "sources": null,
+              "destinations": null,
+              "snis": null,
+              "hosts": null,
+              "path_handling": "v0",
+              "updated_at": 1682668842,
+              "id": "12d1588c-90ca-4fcc-bfd4-13bfaa38cd9e",
+              "service": {
+                "id": "c6041b6b-05fa-4d45-ade7-84517e0a8a25"
+              },
+              "https_redirect_status_code": 426,
+              "preserve_host": false,
+              "tags": null,
+              "created_at": 1682668842,
+              "protocols": [
+                "http",
+                "https"
+              ],
+              "name": "_v1_notification_register",
+              "headers": null,
+              "regex_priority": 1,
+              "request_buffering": true,
+              "response_buffering": true
+            },
+            {
+              "strip_path": false,
+              "paths": [
+                "/v1/security-setting"
+              ],
+              "methods": [
+                "GET",
+                "POST",
+                "OPTIONS"
+              ],
+              "sources": null,
+              "destinations": null,
+              "snis": null,
+              "hosts": null,
+              "path_handling": "v0",
+              "updated_at": 1682668842,
+              "id": "186c5550-4077-4266-9d54-15bd7f125f35",
+              "service": {
+                "id": "c6041b6b-05fa-4d45-ade7-84517e0a8a25"
+              },
+              "https_redirect_status_code": 426,
+              "preserve_host": false,
+              "tags": null,
+              "created_at": 1682668842,
+              "protocols": [
+                "http",
+                "https"
+              ],
+              "name": "_v1_security-setting",
+              "headers": null,
+              "regex_priority": 1,
+              "request_buffering": true,
+              "response_buffering": true
+            },
+            {
+              "strip_path": false,
+              "paths": [
+                "/v1/transfer/transfer-by-link"
+              ],
+              "methods": [
+                "POST",
+                "OPTIONS"
+              ],
+              "sources": null,
+              "destinations": null,
+              "snis": null,
+              "hosts": null,
+              "path_handling": "v0",
+              "updated_at": 1682668842,
+              "id": "18faee39-e2e4-46de-bfa4-6151c36fe738",
+              "service": {
+                "id": "c6041b6b-05fa-4d45-ade7-84517e0a8a25"
+              },
+              "https_redirect_status_code": 426,
+              "preserve_host": false,
+              "tags": null,
+              "created_at": 1682668842,
+              "protocols": [
+                "http",
+                "https"
+              ],
+              "name": "_v1_transfer_transfer-by-link",
+              "headers": null,
+              "regex_priority": 1,
+              "request_buffering": true,
+              "response_buffering": true
+            },
+            {
+              "strip_path": false,
+              "paths": [
+                "/v1/update-notification-setting"
+              ],
+              "methods": [
+                "PUT",
+                "OPTIONS"
+              ],
+              "sources": null,
+              "destinations": null,
+              "snis": null,
+              "hosts": null,
+              "path_handling": "v0",
+              "updated_at": 1682668842,
+              "id": "1a815a4d-56de-4d76-bfa2-b48284a4a995",
+              "service": {
+                "id": "c6041b6b-05fa-4d45-ade7-84517e0a8a25"
+              },
+              "https_redirect_status_code": 426,
+              "preserve_host": false,
+              "tags": null,
+              "created_at": 1682668842,
+              "protocols": [
+                "http",
+                "https"
+              ],
+              "name": "_v1_update-notification-setting",
+              "headers": null,
+              "regex_priority": 1,
+              "request_buffering": true,
+              "response_buffering": true
+            },
+            {
+              "strip_path": false,
+              "paths": [
+                "/v1/ekyc/compare-faces"
+              ],
+              "methods": [
+                "POST",
+                "OPTIONS"
+              ],
+              "sources": null,
+              "destinations": null,
+              "snis": null,
+              "hosts": null,
+              "path_handling": "v0",
+              "updated_at": 1682668842,
+              "id": "1ac7b5e1-16be-4855-b590-0d14234616fd",
+              "service": {
+                "id": "c6041b6b-05fa-4d45-ade7-84517e0a8a25"
+              },
+              "https_redirect_status_code": 426,
+              "preserve_host": false,
+              "tags": null,
+              "created_at": 1682668842,
+              "protocols": [
+                "http",
+                "https"
+              ],
+              "name": "_v1_ekyc_compare-faces",
+              "headers": null,
+              "regex_priority": 1,
+              "request_buffering": true,
+              "response_buffering": true
+            },
+            {
+              "strip_path": false,
+              "paths": [
+                "/v1/get-otp"
+              ],
+              "methods": [
+                "POST",
+                "OPTIONS"
+              ],
+              "sources": null,
+              "destinations": null,
+              "snis": null,
+              "hosts": null,
+              "path_handling": "v0",
+              "updated_at": 1682668842,
+              "id": "1ad141e0-9626-4412-894f-3deac34dd60e",
+              "service": {
+                "id": "c6041b6b-05fa-4d45-ade7-84517e0a8a25"
+              },
+              "https_redirect_status_code": 426,
+              "preserve_host": false,
+              "tags": null,
+              "created_at": 1682668842,
+              "protocols": [
+                "http",
+                "https"
+              ],
+              "name": "_v1_get-otp",
+              "headers": null,
+              "regex_priority": 1,
+              "request_buffering": true,
+              "response_buffering": true
+            },
+            {
+              "strip_path": false,
+              "paths": [
+                "/v1/transfer/napas/deposit-ipn"
+              ],
+              "methods": [
+                "POST",
+                "OPTIONS"
+              ],
+              "sources": null,
+              "destinations": null,
+              "snis": null,
+              "hosts": null,
+              "path_handling": "v0",
+              "updated_at": 1682668842,
+              "id": "1eac672e-36ba-4a59-8e97-32b6f0295a3c",
+              "service": {
+                "id": "c6041b6b-05fa-4d45-ade7-84517e0a8a25"
+              },
+              "https_redirect_status_code": 426,
+              "preserve_host": false,
+              "tags": null,
+              "created_at": 1682668842,
+              "protocols": [
+                "http",
+                "https"
+              ],
+              "name": "_v1_transfer_napas_deposit-ipn",
+              "headers": null,
+              "regex_priority": 1,
+              "request_buffering": true,
+              "response_buffering": true
+            },
+            {
+              "strip_path": false,
+              "paths": [
+                "/v1/payment-link/bidv/link"
+              ],
+              "methods": [
+                "POST",
+                "OPTIONS"
+              ],
+              "sources": null,
+              "destinations": null,
+              "snis": null,
+              "hosts": null,
+              "path_handling": "v0",
+              "updated_at": 1682668842,
+              "id": "252edbc7-9b28-4570-86e6-bd55d012a84a",
+              "service": {
+                "id": "c6041b6b-05fa-4d45-ade7-84517e0a8a25"
+              },
+              "https_redirect_status_code": 426,
+              "preserve_host": false,
+              "tags": null,
+              "created_at": 1682668842,
+              "protocols": [
+                "http",
+                "https"
+              ],
+              "name": "_v1_payment-link_bidv_link",
+              "headers": null,
+              "regex_priority": 1,
+              "request_buffering": true,
+              "response_buffering": true
+            },
+            {
+              "strip_path": false,
+              "paths": [
+                "/v1/bank"
+              ],
+              "methods": [
+                "GET",
+                "OPTIONS"
+              ],
+              "sources": null,
+              "destinations": null,
+              "snis": null,
+              "hosts": null,
+              "path_handling": "v0",
+              "updated_at": 1682668842,
+              "id": "25f9a68c-763d-496f-a6ae-180e1b69b5f4",
+              "service": {
+                "id": "c6041b6b-05fa-4d45-ade7-84517e0a8a25"
+              },
+              "https_redirect_status_code": 426,
+              "preserve_host": false,
+              "tags": null,
+              "created_at": 1682668842,
+              "protocols": [
+                "http",
+                "https"
+              ],
+              "name": "_v1_bank",
+              "headers": null,
+              "regex_priority": 1,
+              "request_buffering": true,
+              "response_buffering": true
+            },
+            {
+              "strip_path": false,
+              "paths": [
+                "/v1/payment-link"
+              ],
+              "methods": [
+                "GET",
+                "OPTIONS"
+              ],
+              "sources": null,
+              "destinations": null,
+              "snis": null,
+              "hosts": null,
+              "path_handling": "v0",
+              "updated_at": 1682668842,
+              "id": "28ee91c7-779a-4062-a5ad-f5d718516a5b",
+              "service": {
+                "id": "c6041b6b-05fa-4d45-ade7-84517e0a8a25"
+              },
+              "https_redirect_status_code": 426,
+              "preserve_host": false,
+              "tags": null,
+              "created_at": 1682668842,
+              "protocols": [
+                "http",
+                "https"
+              ],
+              "name": "_v1_payment-link",
+              "headers": null,
+              "regex_priority": 1,
+              "request_buffering": true,
+              "response_buffering": true
+            },
+            {
+              "strip_path": false,
+              "paths": [
+                "/v1/ekyc/upload-image"
+              ],
+              "methods": [
+                "POST",
+                "OPTIONS"
+              ],
+              "sources": null,
+              "destinations": null,
+              "snis": null,
+              "hosts": null,
+              "path_handling": "v0",
+              "updated_at": 1682668842,
+              "id": "2aca2f7c-7b16-46fc-9365-f076aea86862",
+              "service": {
+                "id": "c6041b6b-05fa-4d45-ade7-84517e0a8a25"
+              },
+              "https_redirect_status_code": 426,
+              "preserve_host": false,
+              "tags": null,
+              "created_at": 1682668842,
+              "protocols": [
+                "http",
+                "https"
+              ],
+              "name": "_v1_ekyc_upload-image",
+              "headers": null,
+              "regex_priority": 1,
+              "request_buffering": true,
+              "response_buffering": true
+            },
+            {
+              "strip_path": false,
+              "paths": [
+                "/v1/auth/logout"
+              ],
+              "methods": [
+                "POST",
+                "OPTIONS"
+              ],
+              "sources": null,
+              "destinations": null,
+              "snis": null,
+              "hosts": null,
+              "path_handling": "v0",
+              "updated_at": 1682668842,
+              "id": "34bdd6db-32db-41ba-87dd-33b8cc638a35",
+              "service": {
+                "id": "c6041b6b-05fa-4d45-ade7-84517e0a8a25"
+              },
+              "https_redirect_status_code": 426,
+              "preserve_host": false,
+              "tags": null,
+              "created_at": 1682668842,
+              "protocols": [
+                "http",
+                "https"
+              ],
+              "name": "_v1_auth_logout",
+              "headers": null,
+              "regex_priority": 1,
+              "request_buffering": true,
+              "response_buffering": true
+            },
+            {
+              "strip_path": false,
+              "paths": [
+                "/v1/notification"
+              ],
+              "methods": [
+                "GET",
+                "OPTIONS"
+              ],
+              "sources": null,
+              "destinations": null,
+              "snis": null,
+              "hosts": null,
+              "path_handling": "v0",
+              "updated_at": 1682668842,
+              "id": "3562405a-2905-43dd-8491-8a782e8496f9",
+              "service": {
+                "id": "c6041b6b-05fa-4d45-ade7-84517e0a8a25"
+              },
+              "https_redirect_status_code": 426,
+              "preserve_host": false,
+              "tags": null,
+              "created_at": 1682668842,
+              "protocols": [
+                "http",
+                "https"
+              ],
+              "name": "_v1_notification",
+              "headers": null,
+              "regex_priority": 1,
+              "request_buffering": true,
+              "response_buffering": true
+            },
+            {
+              "strip_path": false,
+              "paths": [
+                "/v1/transfer/bidv/name-247"
+              ],
+              "methods": [
+                "POST",
+                "OPTIONS"
+              ],
+              "sources": null,
+              "destinations": null,
+              "snis": null,
+              "hosts": null,
+              "path_handling": "v0",
+              "updated_at": 1682668842,
+              "id": "37410f13-d0ab-46e8-a522-01f861046b73",
+              "service": {
+                "id": "c6041b6b-05fa-4d45-ade7-84517e0a8a25"
+              },
+              "https_redirect_status_code": 426,
+              "preserve_host": false,
+              "tags": null,
+              "created_at": 1682668842,
+              "protocols": [
+                "http",
+                "https"
+              ],
+              "name": "_v1_transfer_bidv_name-247",
+              "headers": null,
+              "regex_priority": 1,
+              "request_buffering": true,
+              "response_buffering": true
+            },
+            {
+              "strip_path": false,
+              "paths": [
+                "/v1/auth/login"
+              ],
+              "methods": [
+                "POST",
+                "OPTIONS"
+              ],
+              "sources": null,
+              "destinations": null,
+              "snis": null,
+              "hosts": null,
+              "path_handling": "v0",
+              "updated_at": 1682668842,
+              "id": "3bf6abe9-4264-494b-b14d-8fe73299d88b",
+              "service": {
+                "id": "c6041b6b-05fa-4d45-ade7-84517e0a8a25"
+              },
+              "https_redirect_status_code": 426,
+              "preserve_host": false,
+              "tags": null,
+              "created_at": 1682668842,
+              "protocols": [
+                "http",
+                "https"
+              ],
+              "name": "_v1_auth_login",
+              "headers": null,
+              "regex_priority": 1,
+              "request_buffering": true,
+              "response_buffering": true
+            },
+            {
+              "strip_path": false,
+              "paths": [
+                "/v1/avatar"
+              ],
+              "methods": [
+                "POST",
+                "OPTIONS"
+              ],
+              "sources": null,
+              "destinations": null,
+              "snis": null,
+              "hosts": null,
+              "path_handling": "v0",
+              "updated_at": 1682668842,
+              "id": "3e85f07b-8c41-4796-bb93-5b4d3abd4821",
+              "service": {
+                "id": "c6041b6b-05fa-4d45-ade7-84517e0a8a25"
+              },
+              "https_redirect_status_code": 426,
+              "preserve_host": false,
+              "tags": null,
+              "created_at": 1682668842,
+              "protocols": [
+                "http",
+                "https"
+              ],
+              "name": "_v1_avatar",
+              "headers": null,
+              "regex_priority": 1,
+              "request_buffering": true,
+              "response_buffering": true
+            },
+            {
+              "strip_path": false,
+              "paths": [
+                "/v1/auth/login-biometric"
+              ],
+              "methods": [
+                "POST",
+                "OPTIONS"
+              ],
+              "sources": null,
+              "destinations": null,
+              "snis": null,
+              "hosts": null,
+              "path_handling": "v0",
+              "updated_at": 1682668842,
+              "id": "46ede123-5f92-4ff8-9c82-5494f2f162cd",
+              "service": {
+                "id": "c6041b6b-05fa-4d45-ade7-84517e0a8a25"
+              },
+              "https_redirect_status_code": 426,
+              "preserve_host": false,
+              "tags": null,
+              "created_at": 1682668842,
+              "protocols": [
+                "http",
+                "https"
+              ],
+              "name": "_v1_auth_login-biometric",
+              "headers": null,
+              "regex_priority": 1,
+              "request_buffering": true,
+              "response_buffering": true
+            },
+            {
+              "strip_path": false,
+              "paths": [
+                "/v1/customer/pagination"
+              ],
+              "methods": [
+                "GET",
+                "OPTIONS"
+              ],
+              "sources": null,
+              "destinations": null,
+              "snis": null,
+              "hosts": null,
+              "path_handling": "v0",
+              "updated_at": 1682668842,
+              "id": "4791db09-28f3-486f-ab3e-55927823784a",
+              "service": {
+                "id": "c6041b6b-05fa-4d45-ade7-84517e0a8a25"
+              },
+              "https_redirect_status_code": 426,
+              "preserve_host": false,
+              "tags": null,
+              "created_at": 1682668842,
+              "protocols": [
+                "http",
+                "https"
+              ],
+              "name": "_v1_customer_pagination",
+              "headers": null,
+              "regex_priority": 1,
+              "request_buffering": true,
+              "response_buffering": true
+            },
+            {
+              "strip_path": false,
+              "paths": [
+                "/v1/bill-payment/pay-bill-by-link"
+              ],
+              "methods": [
+                "POST",
+                "OPTIONS"
+              ],
+              "sources": null,
+              "destinations": null,
+              "snis": null,
+              "hosts": null,
+              "path_handling": "v0",
+              "updated_at": 1682668842,
+              "id": "49a598db-a95f-4592-a02f-26ad903c0d51",
+              "service": {
+                "id": "c6041b6b-05fa-4d45-ade7-84517e0a8a25"
+              },
+              "https_redirect_status_code": 426,
+              "preserve_host": false,
+              "tags": null,
+              "created_at": 1682668842,
+              "protocols": [
+                "http",
+                "https"
+              ],
+              "name": "_v1_bill-payment_pay-bill-by-link",
+              "headers": null,
+              "regex_priority": 1,
+              "request_buffering": true,
+              "response_buffering": true
+            },
+            {
+              "strip_path": false,
+              "paths": [
+                "/v1/transfer/bidv/transfer-247"
+              ],
+              "methods": [
+                "POST",
+                "OPTIONS"
+              ],
+              "sources": null,
+              "destinations": null,
+              "snis": null,
+              "hosts": null,
+              "path_handling": "v0",
+              "updated_at": 1682668842,
+              "id": "4a0d3246-2ce0-481d-988e-9d4ff76a7481",
+              "service": {
+                "id": "c6041b6b-05fa-4d45-ade7-84517e0a8a25"
+              },
+              "https_redirect_status_code": 426,
+              "preserve_host": false,
+              "tags": null,
+              "created_at": 1682668842,
+              "protocols": [
+                "http",
+                "https"
+              ],
+              "name": "_v1_transfer_bidv_transfer-247",
+              "headers": null,
+              "regex_priority": 1,
+              "request_buffering": true,
+              "response_buffering": true
+            },
+            {
+              "strip_path": false,
+              "paths": [
+                "/v1/payment-link/bidv/unlink"
+              ],
+              "methods": [
+                "POST",
+                "OPTIONS"
+              ],
+              "sources": null,
+              "destinations": null,
+              "snis": null,
+              "hosts": null,
+              "path_handling": "v0",
+              "updated_at": 1682668842,
+              "id": "4e3d15f2-8555-42f0-a1cb-87ee9e751533",
+              "service": {
+                "id": "c6041b6b-05fa-4d45-ade7-84517e0a8a25"
+              },
+              "https_redirect_status_code": 426,
+              "preserve_host": false,
+              "tags": null,
+              "created_at": 1682668842,
+              "protocols": [
+                "http",
+                "https"
+              ],
+              "name": "_v1_payment-link_bidv_unlink",
+              "headers": null,
+              "regex_priority": 1,
+              "request_buffering": true,
+              "response_buffering": true
+            },
+            {
+              "strip_path": false,
+              "paths": [
+                "/v1/transaction/check-limit"
+              ],
+              "methods": [
+                "GET",
+                "OPTIONS"
+              ],
+              "sources": null,
+              "destinations": null,
+              "snis": null,
+              "hosts": null,
+              "path_handling": "v0",
+              "updated_at": 1682668842,
+              "id": "5165dcdd-05f8-48b9-bc04-75283317c1a9",
+              "service": {
+                "id": "c6041b6b-05fa-4d45-ade7-84517e0a8a25"
+              },
+              "https_redirect_status_code": 426,
+              "preserve_host": false,
+              "tags": null,
+              "created_at": 1682668842,
+              "protocols": [
+                "http",
+                "https"
+              ],
+              "name": "_v1_transaction_check-limit",
+              "headers": null,
+              "regex_priority": 1,
+              "request_buffering": true,
+              "response_buffering": true
+            },
+            {
+              "strip_path": false,
+              "paths": [
+                "/v1/payment-link/napas/check-link-status"
+              ],
+              "methods": [
+                "POST",
+                "OPTIONS"
+              ],
+              "sources": null,
+              "destinations": null,
+              "snis": null,
+              "hosts": null,
+              "path_handling": "v0",
+              "updated_at": 1682668842,
+              "id": "53b9f2dc-894d-4a0f-8c89-7aec81a2c484",
+              "service": {
+                "id": "c6041b6b-05fa-4d45-ade7-84517e0a8a25"
+              },
+              "https_redirect_status_code": 426,
+              "preserve_host": false,
+              "tags": null,
+              "created_at": 1682668842,
+              "protocols": [
+                "http",
+                "https"
+              ],
+              "name": "_v1_payment-link_napas_check-link-status",
+              "headers": null,
+              "regex_priority": 1,
+              "request_buffering": true,
+              "response_buffering": true
+            },
+            {
+              "strip_path": false,
+              "paths": null,
+              "methods": [
+                "GET",
+                "DELETE",
+                "OPTIONS"
+              ],
+              "sources": null,
+              "destinations": null,
+              "snis": null,
+              "hosts": null,
+              "path_handling": "v1",
+              "updated_at": 1685521984,
+              "id": "54de52a5-8fef-4bec-b82a-560bbd44be4b",
+              "service": {
+                "id": "c6041b6b-05fa-4d45-ade7-84517e0a8a25"
+              },
+              "https_redirect_status_code": 426,
+              "preserve_host": false,
+              "tags": null,
+              "created_at": 1682668842,
+              "protocols": [
+                "http",
+                "https"
+              ],
+              "name": "_v1_notification_id",
+              "headers": null,
+              "regex_priority": 1,
+              "request_buffering": true,
+              "response_buffering": true
+            },
+            {
+              "strip_path": false,
+              "paths": [
+                "/v1/bill-payment/services-new"
+              ],
+              "methods": [
+                "GET",
+                "OPTIONS"
+              ],
+              "sources": null,
+              "destinations": null,
+              "snis": null,
+              "hosts": null,
+              "path_handling": "v0",
+              "updated_at": 1682668842,
+              "id": "5a2c0642-e750-40d1-807c-93006a93960c",
+              "service": {
+                "id": "c6041b6b-05fa-4d45-ade7-84517e0a8a25"
+              },
+              "https_redirect_status_code": 426,
+              "preserve_host": false,
+              "tags": null,
+              "created_at": 1682668842,
+              "protocols": [
+                "http",
+                "https"
+              ],
+              "name": "_v1_bill-payment_services-new",
+              "headers": null,
+              "regex_priority": 1,
+              "request_buffering": true,
+              "response_buffering": true
+            },
+            {
+              "strip_path": false,
+              "paths": [
+                "/v1/location/province/district/\\S+/ward"
+              ],
+              "methods": [
+                "GET",
+                "OPTIONS"
+              ],
+              "sources": null,
+              "destinations": null,
+              "snis": null,
+              "hosts": null,
+              "path_handling": "v0",
+              "updated_at": 1685356143,
+              "id": "5cc755ad-6d9d-4950-81d4-20f9be7565cd",
+              "service": {
+                "id": "c6041b6b-05fa-4d45-ade7-84517e0a8a25"
+              },
+              "https_redirect_status_code": 426,
+              "preserve_host": false,
+              "tags": null,
+              "created_at": 1682668842,
+              "protocols": [
+                "http",
+                "https"
+              ],
+              "name": "_v1_location_province_district_code_ward",
+              "headers": null,
+              "regex_priority": 1,
+              "request_buffering": true,
+              "response_buffering": true
+            },
+            {
+              "strip_path": false,
+              "paths": [
+                "/v1/transfer/bidv/withdraw"
+              ],
+              "methods": [
+                "POST",
+                "OPTIONS"
+              ],
+              "sources": null,
+              "destinations": null,
+              "snis": null,
+              "hosts": null,
+              "path_handling": "v0",
+              "updated_at": 1682668842,
+              "id": "66e9da0b-3b37-4599-b8f1-86da269d5fc6",
+              "service": {
+                "id": "c6041b6b-05fa-4d45-ade7-84517e0a8a25"
+              },
+              "https_redirect_status_code": 426,
+              "preserve_host": false,
+              "tags": null,
+              "created_at": 1682668842,
+              "protocols": [
+                "http",
+                "https"
+              ],
+              "name": "_v1_transfer_bidv_withdraw",
+              "headers": null,
+              "regex_priority": 1,
+              "request_buffering": true,
+              "response_buffering": true
+            },
+            {
+              "strip_path": false,
+              "paths": [
+                "/v1/ssc-payment/pay-bill-by-link"
+              ],
+              "methods": [
+                "POST",
+                "OPTIONS"
+              ],
+              "sources": null,
+              "destinations": null,
+              "snis": null,
+              "hosts": null,
+              "path_handling": "v0",
+              "updated_at": 1682668842,
+              "id": "6c3bdbf2-0bf2-4e97-a049-71772883352b",
+              "service": {
+                "id": "c6041b6b-05fa-4d45-ade7-84517e0a8a25"
+              },
+              "https_redirect_status_code": 426,
+              "preserve_host": false,
+              "tags": null,
+              "created_at": 1682668842,
+              "protocols": [
+                "http",
+                "https"
+              ],
+              "name": "_v1_ssc-payment_pay-bill-by-link",
+              "headers": null,
+              "regex_priority": 1,
+              "request_buffering": true,
+              "response_buffering": true
+            },
+            {
+              "strip_path": false,
+              "paths": [
+                "/v1/auth/verify-bank-link"
+              ],
+              "methods": [
+                "POST",
+                "OPTIONS"
+              ],
+              "sources": null,
+              "destinations": null,
+              "snis": null,
+              "hosts": null,
+              "path_handling": "v0",
+              "updated_at": 1682668842,
+              "id": "6c689136-0e1f-4afc-b240-1340326e9c04",
+              "service": {
+                "id": "c6041b6b-05fa-4d45-ade7-84517e0a8a25"
+              },
+              "https_redirect_status_code": 426,
+              "preserve_host": false,
+              "tags": null,
+              "created_at": 1682668842,
+              "protocols": [
+                "http",
+                "https"
+              ],
+              "name": "_v1_auth_verify-bank-link",
+              "headers": null,
+              "regex_priority": 1,
+              "request_buffering": true,
+              "response_buffering": true
+            },
+            {
+              "strip_path": false,
+              "paths": [
+                "/v1/auth/change-password"
+              ],
+              "methods": [
+                "POST",
+                "OPTIONS"
+              ],
+              "sources": null,
+              "destinations": null,
+              "snis": null,
+              "hosts": null,
+              "path_handling": "v0",
+              "updated_at": 1682668842,
+              "id": "74d45930-e1f2-4593-b8f2-4f3a20154d81",
+              "service": {
+                "id": "c6041b6b-05fa-4d45-ade7-84517e0a8a25"
+              },
+              "https_redirect_status_code": 426,
+              "preserve_host": false,
+              "tags": null,
+              "created_at": 1682668842,
+              "protocols": [
+                "http",
+                "https"
+              ],
+              "name": "_v1_auth_change-password",
+              "headers": null,
+              "regex_priority": 1,
+              "request_buffering": true,
+              "response_buffering": true
+            },
+            {
+              "strip_path": false,
+              "paths": [
+                "/v1/update-information"
+              ],
+              "methods": [
+                "PATCH",
+                "OPTIONS"
+              ],
+              "sources": null,
+              "destinations": null,
+              "snis": null,
+              "hosts": null,
+              "path_handling": "v0",
+              "updated_at": 1682668842,
+              "id": "7c9b2d8b-05c8-4dbe-9507-d311b8aa4961",
+              "service": {
+                "id": "c6041b6b-05fa-4d45-ade7-84517e0a8a25"
+              },
+              "https_redirect_status_code": 426,
+              "preserve_host": false,
+              "tags": null,
+              "created_at": 1682668842,
+              "protocols": [
+                "http",
+                "https"
+              ],
+              "name": "_v1_update-information",
+              "headers": null,
+              "regex_priority": 1,
+              "request_buffering": true,
+              "response_buffering": true
+            },
+            {
+              "strip_path": false,
+              "paths": [
+                "/v1/auth/refresh-token"
+              ],
+              "methods": [
+                "POST",
+                "OPTIONS"
+              ],
+              "sources": null,
+              "destinations": null,
+              "snis": null,
+              "hosts": null,
+              "path_handling": "v0",
+              "updated_at": 1682668842,
+              "id": "81179398-eb26-42f3-befb-7d8f7feee89b",
+              "service": {
+                "id": "c6041b6b-05fa-4d45-ade7-84517e0a8a25"
+              },
+              "https_redirect_status_code": 426,
+              "preserve_host": false,
+              "tags": null,
+              "created_at": 1682668842,
+              "protocols": [
+                "http",
+                "https"
+              ],
+              "name": "_v1_auth_refresh-token",
+              "headers": null,
+              "regex_priority": 1,
+              "request_buffering": true,
+              "response_buffering": true
+            },
+            {
+              "strip_path": false,
+              "paths": [
+                "/v1/notification/mark-as-read"
+              ],
+              "methods": [
+                "PUT",
+                "OPTIONS"
+              ],
+              "sources": null,
+              "destinations": null,
+              "snis": null,
+              "hosts": null,
+              "path_handling": "v0",
+              "updated_at": 1682668842,
+              "id": "8649b661-4a79-400b-b9de-f1c4c9014cfb",
+              "service": {
+                "id": "c6041b6b-05fa-4d45-ade7-84517e0a8a25"
+              },
+              "https_redirect_status_code": 426,
+              "preserve_host": false,
+              "tags": null,
+              "created_at": 1682668842,
+              "protocols": [
+                "http",
+                "https"
+              ],
+              "name": "_v1_notification_mark-as-read",
+              "headers": null,
+              "regex_priority": 1,
+              "request_buffering": true,
+              "response_buffering": true
+            },
+            {
+              "strip_path": false,
+              "paths": [
+                "/v1/verification"
+              ],
+              "methods": [
+                "GET",
+                "OPTIONS"
+              ],
+              "sources": null,
+              "destinations": null,
+              "snis": null,
+              "hosts": null,
+              "path_handling": "v0",
+              "updated_at": 1682668842,
+              "id": "86f314ac-44f1-47b4-9d34-f264e84ca940",
+              "service": {
+                "id": "c6041b6b-05fa-4d45-ade7-84517e0a8a25"
+              },
+              "https_redirect_status_code": 426,
+              "preserve_host": false,
+              "tags": null,
+              "created_at": 1682668842,
+              "protocols": [
+                "http",
+                "https"
+              ],
+              "name": "_v1_verification",
+              "headers": null,
+              "regex_priority": 1,
+              "request_buffering": true,
+              "response_buffering": true
+            },
+            {
+              "strip_path": false,
+              "paths": [
+                "/v1/ssc-payment/pay-bill"
+              ],
+              "methods": [
+                "POST",
+                "OPTIONS"
+              ],
+              "sources": null,
+              "destinations": null,
+              "snis": null,
+              "hosts": null,
+              "path_handling": "v0",
+              "updated_at": 1682668842,
+              "id": "8d0a0e26-84a1-47b5-b5db-b8d798226d39",
+              "service": {
+                "id": "c6041b6b-05fa-4d45-ade7-84517e0a8a25"
+              },
+              "https_redirect_status_code": 426,
+              "preserve_host": false,
+              "tags": null,
+              "created_at": 1682668842,
+              "protocols": [
+                "http",
+                "https"
+              ],
+              "name": "_v1_ssc-payment_pay-bill",
+              "headers": null,
+              "regex_priority": 1,
+              "request_buffering": true,
+              "response_buffering": true
+            },
+            {
+              "strip_path": false,
+              "paths": [
+                "/v1/bill-payment/services"
+              ],
+              "methods": [
+                "GET",
+                "OPTIONS"
+              ],
+              "sources": null,
+              "destinations": null,
+              "snis": null,
+              "hosts": null,
+              "path_handling": "v0",
+              "updated_at": 1682668842,
+              "id": "966d36fb-d610-4f60-8571-b72eec1d397f",
+              "service": {
+                "id": "c6041b6b-05fa-4d45-ade7-84517e0a8a25"
+              },
+              "https_redirect_status_code": 426,
+              "preserve_host": false,
+              "tags": null,
+              "created_at": 1682668842,
+              "protocols": [
+                "http",
+                "https"
+              ],
+              "name": "_v1_bill-payment_services",
+              "headers": null,
+              "regex_priority": 1,
+              "request_buffering": true,
+              "response_buffering": true
+            },
+            {
+              "strip_path": false,
+              "paths": [
+                "/v1/auth/remove-biometric"
+              ],
+              "methods": [
+                "PUT",
+                "OPTIONS"
+              ],
+              "sources": null,
+              "destinations": null,
+              "snis": null,
+              "hosts": null,
+              "path_handling": "v0",
+              "updated_at": 1682668842,
+              "id": "9a31c5d8-f6bc-4eff-80cb-89936d86a99a",
+              "service": {
+                "id": "c6041b6b-05fa-4d45-ade7-84517e0a8a25"
+              },
+              "https_redirect_status_code": 426,
+              "preserve_host": false,
+              "tags": null,
+              "created_at": 1682668842,
+              "protocols": [
+                "http",
+                "https"
+              ],
+              "name": "_v1_auth_remove-biometric",
+              "headers": null,
+              "regex_priority": 1,
+              "request_buffering": true,
+              "response_buffering": true
+            },
+            {
+              "strip_path": false,
+              "paths": [
+                "/v1/ekyc"
+              ],
+              "methods": [
+                "POST",
+                "OPTIONS"
+              ],
+              "sources": null,
+              "destinations": null,
+              "snis": null,
+              "hosts": null,
+              "path_handling": "v0",
+              "updated_at": 1682668842,
+              "id": "9b332dd8-7e4e-4e13-979a-6cc43542e7e2",
+              "service": {
+                "id": "c6041b6b-05fa-4d45-ade7-84517e0a8a25"
+              },
+              "https_redirect_status_code": 426,
+              "preserve_host": false,
+              "tags": null,
+              "created_at": 1682668842,
+              "protocols": [
+                "http",
+                "https"
+              ],
+              "name": "_v1_ekyc",
+              "headers": null,
+              "regex_priority": 1,
+              "request_buffering": true,
+              "response_buffering": true
+            },
+            {
+              "strip_path": false,
+              "paths": [
+                "/v1/payment-link/napas/ipn"
+              ],
+              "methods": [
+                "POST",
+                "OPTIONS"
+              ],
+              "sources": null,
+              "destinations": null,
+              "snis": null,
+              "hosts": null,
+              "path_handling": "v0",
+              "updated_at": 1682668842,
+              "id": "a75b7aa0-3b47-4173-86c3-bfaa5923f5e5",
+              "service": {
+                "id": "c6041b6b-05fa-4d45-ade7-84517e0a8a25"
+              },
+              "https_redirect_status_code": 426,
+              "preserve_host": false,
+              "tags": null,
+              "created_at": 1682668842,
+              "protocols": [
+                "http",
+                "https"
+              ],
+              "name": "_v1_payment-link_napas_ipn",
+              "headers": null,
+              "regex_priority": 1,
+              "request_buffering": true,
+              "response_buffering": true
+            },
+            {
+              "strip_path": false,
+              "paths": [
+                "/v1/auth/check-phone-number"
+              ],
+              "methods": [
+                "GET",
+                "OPTIONS"
+              ],
+              "sources": null,
+              "destinations": null,
+              "snis": null,
+              "hosts": null,
+              "path_handling": "v0",
+              "updated_at": 1682668842,
+              "id": "ac3bfe62-1040-4472-a72c-23fe02e7f901",
+              "service": {
+                "id": "c6041b6b-05fa-4d45-ade7-84517e0a8a25"
+              },
+              "https_redirect_status_code": 426,
+              "preserve_host": false,
+              "tags": null,
+              "created_at": 1682668842,
+              "protocols": [
+                "http",
+                "https"
+              ],
+              "name": "_v1_auth_check-phone-number",
+              "headers": null,
+              "regex_priority": 1,
+              "request_buffering": true,
+              "response_buffering": true
+            },
+            {
+              "strip_path": false,
+              "paths": [
+                "/v1/payment-link/bidv/link-confirm-otp"
+              ],
+              "methods": [
+                "POST",
+                "OPTIONS"
+              ],
+              "sources": null,
+              "destinations": null,
+              "snis": null,
+              "hosts": null,
+              "path_handling": "v0",
+              "updated_at": 1682668842,
+              "id": "b2d9f731-f305-4f19-bf1a-9d732c7b9baa",
+              "service": {
+                "id": "c6041b6b-05fa-4d45-ade7-84517e0a8a25"
+              },
+              "https_redirect_status_code": 426,
+              "preserve_host": false,
+              "tags": null,
+              "created_at": 1682668842,
+              "protocols": [
+                "http",
+                "https"
+              ],
+              "name": "_v1_payment-link_bidv_link-confirm-otp",
+              "headers": null,
+              "regex_priority": 1,
+              "request_buffering": true,
+              "response_buffering": true
+            },
+            {
+              "strip_path": false,
+              "paths": [
+                "/v1/location/province/\\S+/district "
+              ],
+              "methods": [
+                "GET",
+                "OPTIONS"
+              ],
+              "sources": null,
+              "destinations": null,
+              "snis": null,
+              "hosts": null,
+              "path_handling": "v0",
+              "updated_at": 1685356118,
+              "id": "b2f5691e-64c5-4237-a895-0d2f40a20165",
+              "service": {
+                "id": "c6041b6b-05fa-4d45-ade7-84517e0a8a25"
+              },
+              "https_redirect_status_code": 426,
+              "preserve_host": false,
+              "tags": null,
+              "created_at": 1682668842,
+              "protocols": [
+                "http",
+                "https"
+              ],
+              "name": "_v1_location_province_code_district",
+              "headers": null,
+              "regex_priority": 1,
+              "request_buffering": true,
+              "response_buffering": true
+            },
+            {
+              "strip_path": false,
+              "paths": [
+                "/v1/payment-link/napas/unlink"
+              ],
+              "methods": [
+                "POST",
+                "OPTIONS"
+              ],
+              "sources": null,
+              "destinations": null,
+              "snis": null,
+              "hosts": null,
+              "path_handling": "v0",
+              "updated_at": 1682668842,
+              "id": "bd05e939-b08a-4a1a-9c04-e73c974227bb",
+              "service": {
+                "id": "c6041b6b-05fa-4d45-ade7-84517e0a8a25"
+              },
+              "https_redirect_status_code": 426,
+              "preserve_host": false,
+              "tags": null,
+              "created_at": 1682668842,
+              "protocols": [
+                "http",
+                "https"
+              ],
+              "name": "_v1_payment-link_napas_unlink",
+              "headers": null,
+              "regex_priority": 1,
+              "request_buffering": true,
+              "response_buffering": true
+            },
+            {
+              "strip_path": false,
+              "paths": [
+                "/v1/auth/sign-up"
+              ],
+              "methods": [
+                "POST",
+                "OPTIONS"
+              ],
+              "sources": null,
+              "destinations": null,
+              "snis": null,
+              "hosts": null,
+              "path_handling": "v0",
+              "updated_at": 1682668842,
+              "id": "c0914215-9c5e-4088-ab41-2deb4120e11d",
+              "service": {
+                "id": "c6041b6b-05fa-4d45-ade7-84517e0a8a25"
+              },
+              "https_redirect_status_code": 426,
+              "preserve_host": false,
+              "tags": null,
+              "created_at": 1682668842,
+              "protocols": [
+                "http",
+                "https"
+              ],
+              "name": "_v1_auth_sign-up",
+              "headers": null,
+              "regex_priority": 1,
+              "request_buffering": true,
+              "response_buffering": true
+            },
+            {
+              "strip_path": false,
+              "paths": [
+                "/v1/auth/set-biometric"
+              ],
+              "methods": [
+                "POST",
+                "OPTIONS"
+              ],
+              "sources": null,
+              "destinations": null,
+              "snis": null,
+              "hosts": null,
+              "path_handling": "v0",
+              "updated_at": 1682668842,
+              "id": "c1749e52-5d17-41dd-9760-2fc6e1c41e72",
+              "service": {
+                "id": "c6041b6b-05fa-4d45-ade7-84517e0a8a25"
+              },
+              "https_redirect_status_code": 426,
+              "preserve_host": false,
+              "tags": null,
+              "created_at": 1682668842,
+              "protocols": [
+                "http",
+                "https"
+              ],
+              "name": "_v1_auth_set-biometric",
+              "headers": null,
+              "regex_priority": 1,
+              "request_buffering": true,
+              "response_buffering": true
+            },
+            {
+              "strip_path": false,
+              "paths": [
+                "/v1/auth/login-new-device"
+              ],
+              "methods": [
+                "POST",
+                "OPTIONS"
+              ],
+              "sources": null,
+              "destinations": null,
+              "snis": null,
+              "hosts": null,
+              "path_handling": "v0",
+              "updated_at": 1682668842,
+              "id": "c5f727f9-92d1-42ac-b542-0ad662a07280",
+              "service": {
+                "id": "c6041b6b-05fa-4d45-ade7-84517e0a8a25"
+              },
+              "https_redirect_status_code": 426,
+              "preserve_host": false,
+              "tags": null,
+              "created_at": 1682668842,
+              "protocols": [
+                "http",
+                "https"
+              ],
+              "name": "_v1_auth_login-new-device",
+              "headers": null,
+              "regex_priority": 1,
+              "request_buffering": true,
+              "response_buffering": true
+            },
+            {
+              "strip_path": false,
+              "paths": [
+                "/v1/transaction/pagination"
+              ],
+              "methods": [
+                "GET",
+                "OPTIONS"
+              ],
+              "sources": null,
+              "destinations": null,
+              "snis": null,
+              "hosts": null,
+              "path_handling": "v0",
+              "updated_at": 1682668842,
+              "id": "c6e16287-c04a-4711-be01-2342190d0969",
+              "service": {
+                "id": "c6041b6b-05fa-4d45-ade7-84517e0a8a25"
+              },
+              "https_redirect_status_code": 426,
+              "preserve_host": false,
+              "tags": null,
+              "created_at": 1682668842,
+              "protocols": [
+                "http",
+                "https"
+              ],
+              "name": "_v1_transaction_pagination",
+              "headers": null,
+              "regex_priority": 1,
+              "request_buffering": true,
+              "response_buffering": true
+            },
+            {
+              "strip_path": false,
+              "paths": [
+                "/v1/napas-order/\\S+"
+              ],
+              "methods": [
+                "GET",
+                "OPTIONS"
+              ],
+              "sources": null,
+              "destinations": null,
+              "snis": null,
+              "hosts": null,
+              "path_handling": "v0",
+              "updated_at": 1685349034,
+              "id": "ccbb444e-c653-444e-8ee4-a4a77979f802",
+              "service": {
+                "id": "c6041b6b-05fa-4d45-ade7-84517e0a8a25"
+              },
+              "https_redirect_status_code": 426,
+              "preserve_host": false,
+              "tags": null,
+              "created_at": 1682668842,
+              "protocols": [
+                "http",
+                "https"
+              ],
+              "name": "_v1_napas-order_orderId",
+              "headers": null,
+              "regex_priority": 1,
+              "request_buffering": true,
+              "response_buffering": true
+            },
+            {
+              "strip_path": false,
+              "paths": [
+                "/v1/ssc-payment/get-bill"
+              ],
+              "methods": [
+                "POST",
+                "OPTIONS"
+              ],
+              "sources": null,
+              "destinations": null,
+              "snis": null,
+              "hosts": null,
+              "path_handling": "v0",
+              "updated_at": 1682668842,
+              "id": "ccc34162-8889-4691-8a2a-a10081b264c4",
+              "service": {
+                "id": "c6041b6b-05fa-4d45-ade7-84517e0a8a25"
+              },
+              "https_redirect_status_code": 426,
+              "preserve_host": false,
+              "tags": null,
+              "created_at": 1682668842,
+              "protocols": [
+                "http",
+                "https"
+              ],
+              "name": "_v1_ssc-payment_get-bill",
+              "headers": null,
+              "regex_priority": 1,
+              "request_buffering": true,
+              "response_buffering": true
+            },
+            {
+              "strip_path": false,
+              "paths": null,
+              "methods": [
+                "GET",
+                "OPTIONS"
+              ],
+              "sources": null,
+              "destinations": null,
+              "snis": null,
+              "hosts": null,
+              "path_handling": "v1",
+              "updated_at": 1685521972,
+              "id": "d0b3ba1a-3850-43a0-b0ec-14747ad8271a",
+              "service": {
+                "id": "c6041b6b-05fa-4d45-ade7-84517e0a8a25"
+              },
+              "https_redirect_status_code": 426,
+              "preserve_host": false,
+              "tags": null,
+              "created_at": 1682668842,
+              "protocols": [
+                "http",
+                "https"
+              ],
+              "name": "_v1_transaction_id",
+              "headers": null,
+              "regex_priority": 1,
+              "request_buffering": true,
+              "response_buffering": true
+            },
+            {
+              "strip_path": false,
+              "paths": [
+                "/v1/auth/verify-identity"
+              ],
+              "methods": [
+                "POST",
+                "OPTIONS"
+              ],
+              "sources": null,
+              "destinations": null,
+              "snis": null,
+              "hosts": null,
+              "path_handling": "v0",
+              "updated_at": 1682668842,
+              "id": "d340d837-3f13-49e1-a954-a16f8f0b2f8d",
+              "service": {
+                "id": "c6041b6b-05fa-4d45-ade7-84517e0a8a25"
+              },
+              "https_redirect_status_code": 426,
+              "preserve_host": false,
+              "tags": null,
+              "created_at": 1682668842,
+              "protocols": [
+                "http",
+                "https"
+              ],
+              "name": "_v1_auth_verify-identity",
+              "headers": null,
+              "regex_priority": 1,
+              "request_buffering": true,
+              "response_buffering": true
+            },
+            {
+              "strip_path": false,
+              "paths": [
+                "/v1/transaction/pre-commit"
+              ],
+              "methods": [
+                "POST",
+                "OPTION"
+              ],
+              "sources": null,
+              "destinations": null,
+              "snis": null,
+              "hosts": null,
+              "path_handling": "v0",
+              "updated_at": 1683626801,
+              "id": "d70ebeaa-c7b4-467a-b476-80b1b2067f0f",
+              "service": {
+                "id": "c6041b6b-05fa-4d45-ade7-84517e0a8a25"
+              },
+              "https_redirect_status_code": 426,
+              "preserve_host": false,
+              "tags": null,
+              "created_at": 1683626720,
+              "protocols": [
+                "http",
+                "https"
+              ],
+              "name": "_v1_transaction_pre_commit",
+              "headers": null,
+              "regex_priority": 0,
+              "request_buffering": true,
+              "response_buffering": true
+            },
+            {
+              "strip_path": false,
+              "paths": [
+                "/v1/location/province"
+              ],
+              "methods": [
+                "GET",
+                "OPTIONS"
+              ],
+              "sources": null,
+              "destinations": null,
+              "snis": null,
+              "hosts": null,
+              "path_handling": "v0",
+              "updated_at": 1682668842,
+              "id": "d7f2a423-749c-464c-9fc3-f15322243511",
+              "service": {
+                "id": "c6041b6b-05fa-4d45-ade7-84517e0a8a25"
+              },
+              "https_redirect_status_code": 426,
+              "preserve_host": false,
+              "tags": null,
+              "created_at": 1682668842,
+              "protocols": [
+                "http",
+                "https"
+              ],
+              "name": "_v1_location_province",
+              "headers": null,
+              "regex_priority": 1,
+              "request_buffering": true,
+              "response_buffering": true
+            },
+            {
+              "strip_path": false,
+              "paths": [
+                "/v1/auth/validate-new-password"
+              ],
+              "methods": [
+                "POST",
+                "OPTIONS"
+              ],
+              "sources": null,
+              "destinations": null,
+              "snis": null,
+              "hosts": null,
+              "path_handling": "v0",
+              "updated_at": 1682668842,
+              "id": "dfd17cd4-ef83-4f6a-80af-1b93dda23b12",
+              "service": {
+                "id": "c6041b6b-05fa-4d45-ade7-84517e0a8a25"
+              },
+              "https_redirect_status_code": 426,
+              "preserve_host": false,
+              "tags": null,
+              "created_at": 1682668842,
+              "protocols": [
+                "http",
+                "https"
+              ],
+              "name": "_v1_auth_validate-new-password",
+              "headers": null,
+              "regex_priority": 1,
+              "request_buffering": true,
+              "response_buffering": true
+            },
+            {
+              "strip_path": false,
+              "paths": [
+                "/v1/bill-payment/get-bill"
+              ],
+              "methods": [
+                "POST",
+                "OPTIONS"
+              ],
+              "sources": null,
+              "destinations": null,
+              "snis": null,
+              "hosts": null,
+              "path_handling": "v0",
+              "updated_at": 1682668842,
+              "id": "e4918af7-1b7e-49f6-964b-f7021a2c236b",
+              "service": {
+                "id": "c6041b6b-05fa-4d45-ade7-84517e0a8a25"
+              },
+              "https_redirect_status_code": 426,
+              "preserve_host": false,
+              "tags": null,
+              "created_at": 1682668842,
+              "protocols": [
+                "http",
+                "https"
+              ],
+              "name": "_v1_bill-payment_get-bill",
+              "headers": null,
+              "regex_priority": 1,
+              "request_buffering": true,
+              "response_buffering": true
+            },
+            {
+              "strip_path": false,
+              "paths": [
+                "/v1/balance/me"
+              ],
+              "methods": [
+                "GET",
+                "OPTIONS"
+              ],
+              "sources": null,
+              "destinations": null,
+              "snis": null,
+              "hosts": null,
+              "path_handling": "v0",
+              "updated_at": 1682668842,
+              "id": "e4ad48cb-3f3b-4651-b0bb-5e130538aa0e",
+              "service": {
+                "id": "c6041b6b-05fa-4d45-ade7-84517e0a8a25"
+              },
+              "https_redirect_status_code": 426,
+              "preserve_host": false,
+              "tags": null,
+              "created_at": 1682668842,
+              "protocols": [
+                "http",
+                "https"
+              ],
+              "name": "_v1_balance_me",
+              "headers": null,
+              "regex_priority": 1,
+              "request_buffering": true,
+              "response_buffering": true
+            },
+            {
+              "strip_path": false,
+              "paths": [
+                "/v1/transfer"
+              ],
+              "methods": [
+                "POST",
+                "OPTIONS"
+              ],
+              "sources": null,
+              "destinations": null,
+              "snis": null,
+              "hosts": null,
+              "path_handling": "v0",
+              "updated_at": 1682668842,
+              "id": "e64a22cf-ce39-4424-b638-fb2fe5dc8c64",
+              "service": {
+                "id": "c6041b6b-05fa-4d45-ade7-84517e0a8a25"
+              },
+              "https_redirect_status_code": 426,
+              "preserve_host": false,
+              "tags": null,
+              "created_at": 1682668842,
+              "protocols": [
+                "http",
+                "https"
+              ],
+              "name": "_v1_transfer",
+              "headers": null,
+              "regex_priority": 1,
+              "request_buffering": true,
+              "response_buffering": true
+            },
+            {
+              "strip_path": false,
+              "paths": [
+                "/v1/auth/forgot-password"
+              ],
+              "methods": [
+                "POST",
+                "OPTIONS"
+              ],
+              "sources": null,
+              "destinations": null,
+              "snis": null,
+              "hosts": null,
+              "path_handling": "v0",
+              "updated_at": 1682668842,
+              "id": "ee84fab7-9d6d-43e6-8d92-26483a5ff9d9",
+              "service": {
+                "id": "c6041b6b-05fa-4d45-ade7-84517e0a8a25"
+              },
+              "https_redirect_status_code": 426,
+              "preserve_host": false,
+              "tags": null,
+              "created_at": 1682668842,
+              "protocols": [
+                "http",
+                "https"
+              ],
+              "name": "_v1_auth_forgot-password",
+              "headers": null,
+              "regex_priority": 1,
+              "request_buffering": true,
+              "response_buffering": true
+            },
+            {
+              "strip_path": false,
+              "paths": [
+                "/v1/me"
+              ],
+              "methods": [
+                "GET",
+                "OPTIONS"
+              ],
+              "sources": null,
+              "destinations": null,
+              "snis": null,
+              "hosts": null,
+              "path_handling": "v0",
+              "updated_at": 1682668842,
+              "id": "f242d5cf-e1c0-4a92-a439-2ee35a20b90d",
+              "service": {
+                "id": "c6041b6b-05fa-4d45-ade7-84517e0a8a25"
+              },
+              "https_redirect_status_code": 426,
+              "preserve_host": false,
+              "tags": null,
+              "created_at": 1682668842,
+              "protocols": [
+                "http",
+                "https"
+              ],
+              "name": "_v1_me",
+              "headers": null,
+              "regex_priority": 1,
+              "request_buffering": true,
+              "response_buffering": true
+            },
+            {
+              "strip_path": false,
+              "paths": [
+                "/v1/transfer/bidv/bank-247"
+              ],
+              "methods": [
+                "POST",
+                "OPTIONS"
+              ],
+              "sources": null,
+              "destinations": null,
+              "snis": null,
+              "hosts": null,
+              "path_handling": "v0",
+              "updated_at": 1682668842,
+              "id": "f61196a2-160e-4704-beae-f3d00ce55230",
+              "service": {
+                "id": "c6041b6b-05fa-4d45-ade7-84517e0a8a25"
+              },
+              "https_redirect_status_code": 426,
+              "preserve_host": false,
+              "tags": null,
+              "created_at": 1682668842,
+              "protocols": [
+                "http",
+                "https"
+              ],
+              "name": "_v1_transfer_bidv_bank-247",
+              "headers": null,
+              "regex_priority": 1,
+              "request_buffering": true,
+              "response_buffering": true
+            },
+            {
+              "strip_path": false,
+              "paths": [
+                "/v1/transfer/napas/deposit"
+              ],
+              "methods": [
+                "POST",
+                "OPTIONS"
+              ],
+              "sources": null,
+              "destinations": null,
+              "snis": null,
+              "hosts": null,
+              "path_handling": "v0",
+              "updated_at": 1682669131,
+              "id": "f74d7217-418a-474c-803a-0ca7264a4893",
+              "service": {
+                "id": "c6041b6b-05fa-4d45-ade7-84517e0a8a25"
+              },
+              "https_redirect_status_code": 426,
+              "preserve_host": false,
+              "tags": null,
+              "created_at": 1682668842,
+              "protocols": [
+                "http",
+                "https"
+              ],
+              "name": "_v1_transfer_napas_deposit",
+              "headers": null,
+              "regex_priority": 1,
+              "request_buffering": true,
+              "response_buffering": true
+            },
+            {
+              "strip_path": false,
+              "paths": [
+                "/v1/transfer/bidv/deposit"
+              ],
+              "methods": [
+                "POST",
+                "OPTIONS"
+              ],
+              "sources": null,
+              "destinations": null,
+              "snis": null,
+              "hosts": null,
+              "path_handling": "v0",
+              "updated_at": 1682668842,
+              "id": "fcc7dba2-ba63-4c8e-be9c-c4ae879a15d4",
+              "service": {
+                "id": "c6041b6b-05fa-4d45-ade7-84517e0a8a25"
+              },
+              "https_redirect_status_code": 426,
+              "preserve_host": false,
+              "tags": null,
+              "created_at": 1682668842,
+              "protocols": [
+                "http",
+                "https"
+              ],
+              "name": "_v1_transfer_bidv_deposit",
+              "headers": null,
+              "regex_priority": 1,
+              "request_buffering": true,
+              "response_buffering": true
+            },
+            {
+              "strip_path": false,
+              "paths": [
+                "/v1/bill-payment/pay-bill"
+              ],
+              "methods": [
+                "POST",
+                "OPTIONS"
+              ],
+              "sources": null,
+              "destinations": null,
+              "snis": null,
+              "hosts": null,
+              "path_handling": "v0",
+              "updated_at": 1682668842,
+              "id": "fde3d852-ada9-48a2-995c-fc769f718670",
+              "service": {
+                "id": "c6041b6b-05fa-4d45-ade7-84517e0a8a25"
+              },
+              "https_redirect_status_code": 426,
+              "preserve_host": false,
+              "tags": null,
+              "created_at": 1682668842,
+              "protocols": [
+                "http",
+                "https"
+              ],
+              "name": "_v1_bill-payment_pay-bill",
+              "headers": null,
+              "regex_priority": 1,
+              "request_buffering": true,
+              "response_buffering": true
+            },
+            {
+              "strip_path": false,
+              "paths": [
+                "/v1/transfer/bidv/deposit-otp"
+              ],
+              "methods": [
+                "POST",
+                "OPTIONS"
+              ],
+              "sources": null,
+              "destinations": null,
+              "snis": null,
+              "hosts": null,
+              "path_handling": "v0",
+              "updated_at": 1682668842,
+              "id": "febd24df-1b05-4802-9f1e-b16097d096dc",
+              "service": {
+                "id": "c6041b6b-05fa-4d45-ade7-84517e0a8a25"
+              },
+              "https_redirect_status_code": 426,
+              "preserve_host": false,
+              "tags": null,
+              "created_at": 1682668842,
+              "protocols": [
+                "http",
+                "https"
+              ],
+              "name": "_v1_transfer_bidv_deposit-otp",
+              "headers": null,
+              "regex_priority": 1,
+              "request_buffering": true,
+              "response_buffering": true
+            }
+          ],
+          "consumers": [
+            {
+              "id": "5d2227c0-b9c4-47ba-aa2a-2c4c72245ff0",
+              "tags": [],
+              "created_at": 1682667093,
+              "username": "ewallet",
+              "custom_id": "123",
+              "credentials": {
+                "basic-auths": [
+                  {
+                    "consumer": {
+                      "id": "5d2227c0-b9c4-47ba-aa2a-2c4c72245ff0"
+                    },
+                    "id": "b829fadf-8d2f-4eb3-944a-ed7d18b2a5ec",
+                    "tags": null,
+                    "password": "acef72e5960627720105a1bf46cd03e95c004c68",
+                    "username": "ewallet",
+                    "created_at": 1683529242
+                  }
+                ]
+              }
+            }
+          ],
+          "plugins": [
+            {
+              "name": "basic-auth",
+              "id": "9a93c317-0a94-49a3-bac1-f2c608dce6ed",
+              "consumer": null,
+              "service": {
+                "id": "c6041b6b-05fa-4d45-ade7-84517e0a8a25"
+              },
+              "route": null,
+              "config": {
+                "anonymous": null,
+                "hide_credentials": false
+              },
+              "tags": null,
+              "protocols": [
+                "grpc",
+                "grpcs",
+                "http",
+                "https"
+              ],
+              "enabled": false,
+              "created_at": 1682668695
+            }
+          ],
+          "acls": [],
+          "upstreams": [
+            {
+              "name": "Client_API",
+              "hash_on": "none",
+              "hash_on_header": null,
+              "hash_on_query_arg": null,
+              "healthchecks": {
+                "active": {
+                  "headers": null,
+                  "https_verify_certificate": true,
+                  "concurrency": 10,
+                  "type": "http",
+                  "healthy": {
+                    "http_statuses": [
+                      200,
+                      302
+                    ],
+                    "interval": 0,
+                    "successes": 0
+                  },
+                  "unhealthy": {
+                    "tcp_failures": 0,
+                    "timeouts": 0,
+                    "http_failures": 0,
+                    "interval": 0,
+                    "http_statuses": [
+                      429,
+                      404,
+                      500,
+                      501,
+                      502,
+                      503,
+                      504,
+                      505
+                    ]
+                  },
+                  "timeout": 1,
+                  "https_sni": null,
+                  "http_path": "/"
+                },
+                "threshold": 0,
+                "passive": {
+                  "type": "http",
+                  "unhealthy": {
+                    "tcp_failures": 0,
+                    "timeouts": 0,
+                    "http_failures": 0,
+                    "http_statuses": [
+                      429,
+                      500,
+                      503
+                    ]
+                  },
+                  "healthy": {
+                    "successes": 0,
+                    "http_statuses": [
+                      200,
+                      201,
+                      202,
+                      203,
+                      204,
+                      205,
+                      206,
+                      207,
+                      208,
+                      226,
+                      300,
+                      301,
+                      302,
+                      303,
+                      304,
+                      305,
+                      306,
+                      307,
+                      308
+                    ]
+                  }
+                }
+              },
+              "algorithm": "round-robin",
+              "hash_on_cookie": null,
+              "hash_on_cookie_path": "/",
+              "id": "8d594c1c-c880-4205-b2e7-dbdedff2f460",
+              "slots": 1000,
+              "hash_fallback_header": null,
+              "hash_fallback_query_arg": null,
+              "hash_fallback_uri_capture": null,
+              "host_header": null,
+              "client_certificate": null,
+              "tags": null,
+              "created_at": 1677595809,
+              "hash_on_uri_capture": null,
+              "hash_fallback": "none",
+              "targets": [
+                {
+                  "target": "10.0.9.200:3002",
+                  "id": "1dba88ee-88e6-414c-8164-0aac8918d6f9",
+                  "tags": null,
+                  "upstream": {
+                    "id": "8d594c1c-c880-4205-b2e7-dbdedff2f460"
+                  },
+                  "weight": 2,
+                  "created_at": 1677661194.603
+                }
+              ]
+            }
+          ],
+          "certificates": [],
+          "snis": []
+        },
+        "createdAt": "2023-07-17T05:12:31.287Z",
+        "updatedAt": "2023-07-17T05:12:31.287Z"
+      }
+    ],
     "konga_kong_snapshot_schedules": [],
     "konga_kong_upstream_alerts": [],
     "konga_users": [
       {
         "id": 1,
         "username": "admin",
-        "email": "hungnh@scuti.asia",
+        "email": "admin@htp.vn",
         "admin": true,
         "node_id": "",
         "active": true,
-        "activationToken": "c7d6faa2-e8a2-4eb1-9226-a27ed7c35114",
-        "node": 2,
-        "createdAt": "2023-02-24T09:05:20.848Z",
-        "updatedAt": "2023-02-27T13:54:14.827Z"
+        "activationToken": "16315fce-c74d-4ec4-bd6d-cfd3bd33d410",
+        "node": 1,
+        "createdAt": "2023-07-17T05:11:00.397Z",
+        "updatedAt": "2023-07-17T05:12:16.771Z"
       }
     ]
   },
@@ -807,11 +3226,9 @@
       "id": 3
     },
     "konga_kong_nodes": {
-      "id": 2
+      "id": 1
     },
-    "konga_kong_services": {
-      "id": 3
-    },
+    "konga_kong_services": {},
     "konga_netdata_connections": {},
     "konga_passports": {
       "id": 1
@@ -819,7 +3236,9 @@
     "konga_settings": {
       "id": 1
     },
-    "konga_kong_snapshots": {},
+    "konga_kong_snapshots": {
+      "id": 1
+    },
     "konga_kong_snapshot_schedules": {},
     "konga_kong_upstream_alerts": {},
     "konga_users": {
